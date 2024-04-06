@@ -57,7 +57,7 @@ html {
     align-items:center;
     justify-content:center;
     flex-direction:column;
-    gap:1em;/*separe button de l'ecriture */
+    gap:1em;
     font-size:12vmin;
 }
 #new-game{

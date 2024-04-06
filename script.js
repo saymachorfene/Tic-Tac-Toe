@@ -22,7 +22,7 @@ let count = 0;
 //disable all Buttons
 const disableButtons = () => {
     btnRef.forEach((elemnt) => (elemnt.disabled = true));
-    //enable popus
+    
     popupRef.classList.remove("hide");
 };
 //enabled all buttons (For new game and restart)
@@ -31,7 +31,7 @@ const enableButtons = () => {
         elemnet.innerText = "";
         elemnet.disabled =false;
     });
-    //disablabled popup
+    
     popupRef.classList.add("hide");
 };
 
@@ -68,9 +68,9 @@ const drawFunction = () => {
 
 
 
-//win logic
+
 const winckecker = () => {
-    //loop through all winning pattern
+
     for (let i of winningpattern) {
         let [elemnt1, element2, elemnt3] = [
             btnRef[i[0]].innerText,
@@ -78,11 +78,10 @@ const winckecker = () => {
             btnRef[i[2]].innerText
         ];
             
-        //check if element are failed
-        // if 3 empty elemnt are same and would give win as would
+        
         if (elemnt1 != "" && element2 != "" && elemnt3 != ""){
             if (elemnt1 == element2 && element2 == elemnt3) {
-                //if all 3 bouttons have same value then pass the value to winfunction
+
                 winFunction(elemnt1)
             }
         }
@@ -106,20 +105,20 @@ btnRef.forEach((element) => {
             element.innerText = "O";
             element.disabled = true;
         }
-        //increment count on each click
+        
         count += 1;
         if (count == 9) {
-            //it's a draw since are a total of 9 boxed
+            
             drawFunction();
         }
-        //check for win on every click
+        
         winckecker();
 
 
 
     });
 });
-//enableButtons and disabled popup en page load
+//enable Buttons and disabled popup en page load
 window.onload = enableButtons;
 
 
